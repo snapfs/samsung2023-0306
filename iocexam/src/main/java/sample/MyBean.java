@@ -4,6 +4,9 @@ public class MyBean {
 	private String name;
 	private int count;
 	
+	public MyBean() {
+		System.out.println("MyBean 생성!!");
+	}
 	public String getName() {
 		return name;
 	}
