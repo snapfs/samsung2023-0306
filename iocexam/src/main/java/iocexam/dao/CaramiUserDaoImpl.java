@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import iocexam.dto.User;
 
 @Repository
-public class UserDaoImpl implements UserDao {
+public class CaramiUserDaoImpl implements UserDao {
 
 	@Override
 	public User getUser(String email) {
@@ -23,7 +23,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public void addUser(User user) {
-		System.out.println(user+"의 정보가 저장 되었습니다.");
+		System.out.println(user+"의 정보가 caramiImpl을 통해서 저장 되었습니다.");
 	}
 
 }
