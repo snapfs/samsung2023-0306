@@ -2,7 +2,6 @@ package aopexam;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import aopexam.config.AppConfig;
 import aopexam.domain.Product;
@@ -11,9 +10,9 @@ import aopexam.service.ProductService;
 public class ProductRun {
 
 	public static void main(String[] args) {
-//		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 	
-		ApplicationContext context = new ClassPathXmlApplicationContext("aopconfig/applicationContext.xml");
+//		ApplicationContext context = new ClassPathXmlApplicationContext("aopconfig/applicationContext.xml");
 		
 		ProductService service = context.getBean(ProductService.class);
 		Product product = new Product();
