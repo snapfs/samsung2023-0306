@@ -1,21 +1,27 @@
 package sample.config;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import sample.Dice;
 import sample.Game;
 import sample.Player;
 
 @Configuration
+@PropertySource({
+	"classpath:game.properties"
+})
 public class DiceGameConfig {
 	@Bean
-	public Dice dice() {
+	public Dice dice(@Value("${face}") int face) {
 //		return new Dice(6);
 		Dice dice = new Dice();
-		dice.setFace(6);
+		dice.setFace(face);
 		return dice;
 	}
 	
@@ -28,9 +34,9 @@ public class DiceGameConfig {
 	}
 	
 	@Bean
-	public Player hong() {
+	public Player hong(Dice dice) {
 		Player player = new Player();
-		player.setDice(dice());
+		player.setDice(dice);
 		player.setName("hong");
 		return player;
 	}
@@ -49,8 +55,12 @@ public class DiceGameConfig {
 		return player;
 	}
 	@Bean
-	public Game game(List<Player> playerList) {
+//	public Game game(List<Player> playerList) {
+	public Game game(Player kim, Player lee) {
 		Game game = new Game();
+		List<Player> playerList = new ArrayList();
+		playerList.add(lee);
+		playerList.add(kim);
 		game.setPlayerList(playerList);
 		return game;
 		
