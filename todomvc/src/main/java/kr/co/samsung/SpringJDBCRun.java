@@ -21,6 +21,18 @@ public class SpringJDBCRun {
 		for (Todo todo : todos) {
 			System.out.println(todo);
 		}
+		
+		System.out.println("============== getTodo(2)");
+		
+		System.out.println(dao.getTodo(2L));
+		
+		
+		Todo updateTodo = new Todo();
+		updateTodo.setId(1L);
+		updateTodo.setDone(true);
+		
+		int resultCount = dao.updateTodo(updateTodo);
+		System.out.println(resultCount+"건 수정 완료!!");
 	}
 
 }
