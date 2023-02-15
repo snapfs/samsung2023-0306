@@ -17,7 +17,7 @@ public class TodoDao {
 	
 	public List<Todo> getTodos(){
 		
-		String sql = "select id, todo, done from todos order by desc";
+		String sql = "select id, todo, done from todos order by id desc";
 		
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper(Todo.class));
 		
