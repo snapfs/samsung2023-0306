@@ -16,23 +16,29 @@ public class SpringJDBCRun {
 		
 		TodoDao dao = context.getBean(TodoDao.class);
 		
-		List<Todo> todos = dao.getTodos();
+//		List<Todo> todos = dao.getTodos();
+//		
+//		for (Todo todo : todos) {
+//			System.out.println(todo);
+//		}
+//		
+//		System.out.println("============== getTodo(2)");
+//		
+//		System.out.println(dao.getTodo(2L));
+//		
+//		
+//		Todo updateTodo = new Todo();
+//		updateTodo.setId(1L);
+//		updateTodo.setDone(true);
+//		
+//		int resultCount = dao.updateTodo(updateTodo);
+//		System.out.println(resultCount+"건 수정 완료!!");
+//		
+//		
+//		dao.insertTodo("test");
 		
-		for (Todo todo : todos) {
-			System.out.println(todo);
-		}
-		
-		System.out.println("============== getTodo(2)");
-		
-		System.out.println(dao.getTodo(2L));
-		
-		
-		Todo updateTodo = new Todo();
-		updateTodo.setId(1L);
-		updateTodo.setDone(true);
-		
-		int resultCount = dao.updateTodo(updateTodo);
-		System.out.println(resultCount+"건 수정 완료!!");
+		Todo todo = dao.addTodo("spirng jdbc study!!");
+		System.out.println(todo);
 	}
 
 }
