@@ -20,7 +20,9 @@ import kr.co.samsung.todomvc.domain.Todo;
 
 @Repository
 public class TodoDao {
-	
+	public TodoDao() {
+		System.out.println("todoDao 생성!! ");
+	}
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
@@ -28,6 +30,7 @@ public class TodoDao {
 	
 	@PostConstruct
 	public void init() {
+		System.out.println("@PostConstruct  실행!!");
 		simpleJdbcInsert = new SimpleJdbcInsert(jdbcTemplate).withTableName("todos").usingGeneratedKeyColumns("id");
 	}
 	

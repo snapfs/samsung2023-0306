@@ -12,7 +12,10 @@ import kr.co.samsung.todomvc.domain.Todo;
 public class SpringJDBCRun {
 
 	public static void main(String[] args) {
+		System.out.println("ApplicationContext 생성전!!");
 		ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+		
+		System.out.println("ApplicationContext 생성후!!");
 		
 		TodoDao dao = context.getBean(TodoDao.class);
 		
