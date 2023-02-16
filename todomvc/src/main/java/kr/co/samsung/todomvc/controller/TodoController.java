@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.samsung.todomvc.domain.Todo;
 import kr.co.samsung.todomvc.service.TodoService;
@@ -47,6 +48,12 @@ public class TodoController {
 	public String add(Todo todo) {
 		todoService.addTodo(todo.getTodo());
 		return "redirect:/todo/list";
+	}
+	
+	@ResponseBody
+	@GetMapping("/test")
+	public String test() {
+		return "testtest";
 	}
 
 }
