@@ -1,4 +1,4 @@
-package kr.co.samsung;
+package kr.co.samsung.todomvc.controller;
 
 import java.text.DateFormat;
 import java.util.Date;

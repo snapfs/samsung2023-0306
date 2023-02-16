@@ -1,13 +1,10 @@
 package kr.co.samsung;
 
-import java.util.List;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import kr.co.samsung.todomvc.config.ApplicationConfig;
-import kr.co.samsung.todomvc.dao.TodoDao;
-import kr.co.samsung.todomvc.domain.Todo;
+
 
 public class SpringJDBCRun {
 
@@ -17,7 +14,7 @@ public class SpringJDBCRun {
 		
 		System.out.println("ApplicationContext 생성후!!");
 		
-		TodoDao dao = context.getBean(TodoDao.class);
+//		TodoDao dao = context.getBean(TodoDao.class);
 		
 //		List<Todo> todos = dao.getTodos();
 //		
@@ -40,8 +37,8 @@ public class SpringJDBCRun {
 //		
 //		dao.insertTodo("test");
 		
-		Todo todo = dao.addTodo("spirng jdbc study!!");
-		System.out.println(todo);
+//		Todo todo = dao.addTodo("spirng jdbc study!!");
+//		System.out.println(todo);
 	}
 
 }
