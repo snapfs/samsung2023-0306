@@ -1,9 +1,17 @@
 package kr.co.samsung.todomvc.domain;
 
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiParam;
+
 public class Todo {
 	private Long id;
 	private String todo;
 	private boolean done;
+	@ApiModelProperty(
+			name="id",
+			example = "1"
+			)
+	@ApiParam(value = "ToDo ID", required = true)
 	public Long getId() {
 		return id;
 	}
@@ -13,6 +21,11 @@ public class Todo {
 	public String getTodo() {
 		return todo;
 	}
+	@ApiModelProperty(
+			name="todo",
+			example = "spirng 교육듣기"
+			)
+	@ApiParam(value = "todo", required = true)
 	public void setTodo(String todo) {
 		this.todo = todo;
 	}
