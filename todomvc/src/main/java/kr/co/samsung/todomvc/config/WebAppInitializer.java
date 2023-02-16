@@ -1,5 +1,8 @@
 package kr.co.samsung.todomvc.config;
 
+import javax.servlet.Filter;
+
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -19,5 +22,14 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 		
 		return new String[] {"/"};
 	}
+
+	@Override
+	protected Filter[] getServletFilters() {
+		CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
+		encodingFilter.setEncoding("utf-8");
+		return new Filter[] {encodingFilter};
+	}
+	
+	
 
 }
