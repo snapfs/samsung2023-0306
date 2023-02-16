@@ -1,12 +1,18 @@
 package jpaexam;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="products")
 public class Product {
 	@Id
+	@GeneratedValue
 	private Long id;
+	@Column(name="product_name", length = 50, unique = true)
 	private String name;
 	private int price;
 	public Long getId() {
