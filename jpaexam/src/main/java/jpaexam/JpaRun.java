@@ -17,15 +17,15 @@ public class JpaRun {
 		try {
 
 //등록!!!  			
-//			Product product = new Product(); // product 엔티티 생성!!
-////			product.setId(1L);
-//			product.setName("pen");
-//			product.setPrice(3000); // 여기까지는 비영속 상태!!
+			Product product = new Product(); // product 엔티티 생성!!
+//			product.setId(1L);
+			product.setName("pen221");
+			product.setPrice(3000); // 여기까지는 비영속 상태!!
 //
-//			System.out.println("persist before!!!");
-//			em.persist(product); // product 가 영속 상태가 된다!! 이때 DB에 저장되는 것은 아니고, 영속성 컨텍스트가 관리하는 상태가 된다!!!
-//			System.out.println("persist after!!!");
-//		
+			System.out.println("persist before!!!");
+			em.persist(product); // product 가 영속 상태가 된다!! 이때 DB에 저장되는 것은 아니고, 영속성 컨텍스트가 관리하는 상태가 된다!!!
+			System.out.println("persist after!!!");
+		
 //			System.out.println(product.getId());
 			
 			
@@ -38,9 +38,12 @@ public class JpaRun {
 //			findProduct.setPrice(1000);
 			
 //삭제        
-			Product removeProduct = em.find(Product.class, 2L);
+			Product removeProduct = em.find(Product.class, 5L);
+			Product removeProduct2 = em.find(Product.class, 5L);
 			em.remove(removeProduct);
 			
+			
+			System.out.println(removeProduct == removeProduct2);
 			
 			System.out.println("commit 전!!");
 			tx.commit();
