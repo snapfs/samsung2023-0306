@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -39,13 +40,14 @@ public class TodoService {
 	}
 
 	public List<Todo> getTodos() {
-		// TODO Auto-generated method stub
-		return null;
+		return todoRepository.findAll(Sort.by("id").descending());
 	}
 
-	public void addTodo(String todo) {
-		// TODO Auto-generated method stub
+	public Todo addTodo(String todo) {
+		Todo insertTodo = new Todo();
+		insertTodo.setTodo(todo);
 		
+		return todoRepository.save(insertTodo);
 	}
 	
 }
