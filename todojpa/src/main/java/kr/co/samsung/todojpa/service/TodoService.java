@@ -15,39 +15,46 @@ import kr.co.samsung.todojpa.repository.TodoRepository;
 public class TodoService {
 	@Autowired
 	private TodoRepository todoRepository;
-	
+
 	@Transactional
-	public Todo updateTodo(Long id) {	
+	public Todo updateTodo(Long id) {
 		System.out.println("service update 시작");
 		Todo updateTodo = null;
 		try {
-		
+
 			updateTodo = todoRepository.findById(id).orElseThrow();
 			updateTodo.setDone(!updateTodo.isDone());
-			
-		}finally {
+
+		} finally {
 			System.out.println("TodoService update 완료!!");
-		}		
+		}
 		return updateTodo;
 	}
-	
+
 	@Transactional
 	public void deleteTodo(Long id) {
-		Optional<Todo>  result  = todoRepository.findById(id);
-		if(result.isEmpty())
+		Optional<Todo> result = todoRepository.findById(id);
+		if (result.isEmpty())
 			return;
 		todoRepository.delete(result.get());
 	}
 
+	@Transactional(readOnly = true)
 	public List<Todo> getTodos() {
 		return todoRepository.findAll(Sort.by("id").descending());
 	}
 
+	@Transactional(readOnly = true)
+	public Todo getToto(Long id) {
+		return todoRepository.findById(id).get();
+	}
+
+	@Transactional
 	public Todo addTodo(String todo) {
 		Todo insertTodo = new Todo();
 		insertTodo.setTodo(todo);
-		
+
 		return todoRepository.save(insertTodo);
 	}
-	
+
 }

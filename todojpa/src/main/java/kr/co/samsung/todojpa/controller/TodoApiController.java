@@ -30,15 +30,14 @@ public class TodoApiController {
 	
 	
 	@GetMapping
-	public List<Todo> getTodos(@RequestHeader("Authorization") String key){
-		System.out.println("#########################key###########################"+key);
+	public List<Todo> getTodos(){
 		return todoService.getTodos();
 	}
 	
-//	@GetMapping("/{id}")
-//	public Todo getTodo(@PathVariable("id")Long  id) {
-//		return todoService.getTodo(id);
-//	}
+	@GetMapping("/{id}")
+	public Todo getTodo(@PathVariable("id")Long  id) {
+		return todoService.getToto(id);
+	}
 	
 	@PatchMapping
 	public String updateTodo(@RequestBody Todo todo) {
