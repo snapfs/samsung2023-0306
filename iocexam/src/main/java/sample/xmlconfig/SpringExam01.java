@@ -1,15 +1,18 @@
 package sample.xmlconfig;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import sample.MyBean;
+import sample.config.MyBeanConfig;
 
 public class SpringExam01 {
 
 	public static void main(String[] args) {
 		System.out.println("ApplicationContext 생성전");
-		ApplicationContext context = new ClassPathXmlApplicationContext("exam01.xml");
+//		ApplicationContext context = new ClassPathXmlApplicationContext("exam01.xml");
+		ApplicationContext context = new AnnotationConfigApplicationContext(MyBeanConfig.class);
 		System.out.println("ApplicationContext 생성후");
 		
 		
