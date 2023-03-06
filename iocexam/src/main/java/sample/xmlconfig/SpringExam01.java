@@ -21,6 +21,8 @@ public class SpringExam01 {
 		
 		MyBean bean2 = context.getBean("bean2",MyBean.class);
 		
+		MyBean bean3 = context.getBean("bean2",MyBean.class);
+		
 		System.out.println(bean2.getName());
 		
 		if(bean1 == bean2) {
@@ -29,7 +31,11 @@ public class SpringExam01 {
 			System.out.println("달라요!!");
 		}
 		
-		
+		if(bean2 == bean3) {
+			System.out.println("같아요!!!");
+		}else {
+			System.out.println("달라요!!");
+		}
 		
 	}
 

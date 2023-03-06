@@ -8,6 +8,11 @@ public class MyBean {
 		System.out.println("MyBean 생성!!");
 	}
 	
+	public MyBean(String name, int count) {
+		this.name = name;
+		this.count = count;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -17,9 +22,9 @@ public class MyBean {
 	public int getCount() {
 		return count;
 	}
-	public void setCount(int count) {
-		this.count = count;
-	}
-	
+//	public void setCount(int count) {
+//		this.count = count;
+//	}
+//	
 	
 }

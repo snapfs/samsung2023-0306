@@ -3,7 +3,11 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:c="http://www.springframework.org/schema/c"
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	<bean id="bean" class="sample.MyBean"></bean>
-	<bean id="bean2" class="sample.MyBean" scope="prototype"></bean>
-	<bean id="book" class="sample.Book"></bean>
+	<bean id="bean" class="sample.MyBean">
+		<!-- <property name="name" value="kang"/>
+		<property name="count" value="100"/> -->
+		<constructor-arg value="carami"/>
+		<constructor-arg value="200"/>
+	</bean>
+	
 </beans>
