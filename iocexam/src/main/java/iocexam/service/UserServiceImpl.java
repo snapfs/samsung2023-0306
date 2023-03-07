@@ -1,16 +1,25 @@
 package iocexam.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
 import iocexam.dao.UserDao;
 import iocexam.domain.User;
-
+@Service("userService")
 public class UserServiceImpl implements UserService {
+	@Autowired
+	@Qualifier("userCaramiDaoImpl")
 	private UserDao userDao;
-
 	
-	
-	public void setUserDao(UserDao userDao) {
+//	@Autowired
+	public UserServiceImpl(UserDao userDao) {
 		this.userDao = userDao;
 	}
+	
+//	public void setUserDao(UserDao userDao) {
+//		this.userDao = userDao;
+//	}
 
 
 
