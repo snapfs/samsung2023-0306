@@ -46,11 +46,11 @@ public class MyFirstAspect {
 	}
 	
 	public Product around(ProceedingJoinPoint pjp) throws Throwable {
-		System.out.println("Hello Around!!   ************  before 가 실행된 후에 실행!!");
+System.out.println("Hello Around!!   ************  before 가 실행되기 전에 실행!!");
 		
 		Product product =(Product)	pjp.proceed();
 		
-		System.out.println("Hello Around!!   ************  after 가 실행되기 전에 실행!!");
+		System.out.println("Hello Around!!   ************  after 가 실행된 후에 실행!!");
 		
 		product.setPrice(5000);
 		
