@@ -13,8 +13,8 @@ public class ProductRun {
 	public static void main(String[] args) {
 		ApplicationContext context = null;
 		
-		context = new ClassPathXmlApplicationContext("sample/config/applicationContext.xml");
-//		context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+//		context = new ClassPathXmlApplicationContext("sample/config/applicationContext.xml");
+		context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 		
 		ProductService service = context.getBean(ProductService.class);
 		

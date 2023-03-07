@@ -20,7 +20,7 @@
 			<aop:pointcut expression="within(sample..*)" id="pc2"/>
 			<aop:before method="before" pointcut-ref="pc"/>
 			<aop:after method="after" pointcut-ref="pc2"/>
-			<aop:after-returning method="afterReturning" pointcut-ref="pc" returning="product"/>
+			<aop:after-returning method="afterReturning" pointcut-ref="pc2" returning="product"/>
 			<aop:after-throwing method="afterThrowing" pointcut-ref="pc" throwing="ex"/>
 			<aop:around method="around" pointcut-ref="pc"/>
 		</aop:aspect>

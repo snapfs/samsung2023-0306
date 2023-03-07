@@ -12,12 +12,15 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public void addProdcut(Product product) {
-		System.out.println("service의 addProdcut 실행");
+		System.out.println("service의 addProdcut 시작");
 		productDao.addProduct(product);
+		System.out.println("service의 addProdcut 종료");
 	}
 
 	@Override
 	public Product findByProductName(String name) {
+		
+		
 		System.out.println("service의 findByProductName 실행");
 		return productDao.findProduct(name);
 	}
