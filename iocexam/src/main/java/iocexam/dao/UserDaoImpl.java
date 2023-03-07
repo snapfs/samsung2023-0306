@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import iocexam.domain.User;
-@Repository("userDao")
+@Repository("userDaoImpl")
 public class UserDaoImpl implements UserDao {
 
 	@Override

@@ -8,18 +8,21 @@ import iocexam.dao.UserDao;
 import iocexam.domain.User;
 @Service("userService")
 public class UserServiceImpl implements UserService {
-	@Autowired
-	@Qualifier("userCaramiDaoImpl")
-	private UserDao userDao;
 	
+	private UserDao userDao;
+	public UserServiceImpl() {
+		
+	}
 //	@Autowired
 	public UserServiceImpl(UserDao userDao) {
 		this.userDao = userDao;
 	}
 	
-//	public void setUserDao(UserDao userDao) {
-//		this.userDao = userDao;
-//	}
+	@Autowired
+	@Qualifier("userCaramiDaoImpl")
+	public void setUserDao(UserDao userDao) {
+		this.userDao = userDao;
+	}
 
 
 
